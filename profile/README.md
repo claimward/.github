@@ -2,8 +2,9 @@
 
 **Zero-Trust access to your network, on your terms.**
 
-Claimward is a self-hosted Zero-Trust VPN built on [WireGuard](https://www.wireguard.com/)
-and OpenID Connect. Users authenticate with your existing identity provider;
+Claimward is a self-hosted Zero-Trust VPN built on [WireGuard](https://www.wireguard.com/),
+with sign-in via **GitHub** (default) or any OpenID Connect provider. Users
+authenticate with an identity provider you already have;
 Claimward enrolls their device as a WireGuard peer and brings up an encrypted
 tunnel to your private network — one peer per device, scoped routes, leases that
 expire on their own.
@@ -23,7 +24,7 @@ Open source (BSD-3-Clause), written in Go, with a Svelte desktop UI.
 
 ## How it works
 
-1. **Sign in** — the client runs an OIDC PKCE flow in the browser and gets an ID token.
+1. **Sign in** — the client authenticates with GitHub (device flow) or an OIDC provider in the browser.
 2. **Enroll** — it sends its WireGuard public key to the server with that token.
 3. **Authorize** — the server verifies the token, allocates an address, and adds the device as a peer.
 4. **Connect** — an encrypted WireGuard tunnel comes up into your private network.
