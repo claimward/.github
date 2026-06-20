@@ -1,3 +1,5 @@
+<p align="center"><img src="https://raw.githubusercontent.com/claimward/brand/main/social/claimward.png" alt="claimward" width="720"></p>
+
 # Claimward
 
 **Zero-Trust access to your network, on your terms.**
