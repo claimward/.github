@@ -4,6 +4,10 @@
     "config:recommended",
     ":semanticCommits"
   ],
+  "postUpdateOptions": [
+    "gomodTidy",
+    "gomodUpdateImportPaths"
+  ],
   "packageRules": [
     {
       "description": "The Svelte/Vite toolchain moves as one. These packages constrain each other through peer dependencies, so raising one alone does not install: vite on its own gives ERESOLVE against the peer range in @sveltejs/vite-plugin-svelte, and npm ci refuses the tree. Both claimward-vpn-app-osx and claimward-vpn-server currently carry vite and @sveltejs/vite-plugin-svelte as SEPARATE pull requests, which is the shape of that failure. Not limited by matchUpdateTypes: it is precisely the major bumps that break the peer ranges, and the general grouping rule covers only minor, patch and digest.",
